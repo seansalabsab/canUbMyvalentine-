@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Pattaya&family=Dancing+Script:wght@400;700&display=swap");
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Dancing Script", cursive;
+  overflow-x: hidden;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.pattaya {
+  font-family: "Pattaya", sans-serif;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #fce7f3, #fbcfe8, #f9a8d4);
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.hearts-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-size: 150px 150px;
+  background-image:
+    radial-gradient(circle at 20% 30%, #ec4899 2px, transparent 2px),
+    radial-gradient(circle at 80% 70%, #ec4899 2px, transparent 2px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart-float {
+  position: fixed;
+  animation: float-up 4s ease-in forwards;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform, opacity;
+}
+
+@keyframes float-up {
+  to {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.8);
+  }
+}
+
+/* Responsive design improvements */
+@media (max-width: 640px) {
+  /* Mobile devices */
+  .container {
+    padding: 1rem;
+  }
+  
+  .text-3xl {
+    font-size: 1.875rem; /* 30px */
+  }
+  
+  .text-4xl {
+    font-size: 2.25rem; /* 36px */
+  }
+  
+  .text-5xl {
+    font-size: 2.5rem; /* 40px */
+  }
+  
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .py-3 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .px-6 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Small mobile devices */
+  .text-3xl {
+    font-size: 1.5rem; /* 24px */
+  }
+  
+  .text-4xl {
+    font-size: 1.875rem; /* 30px */
+  }
+  
+  .text-5xl {
+    font-size: 2rem; /* 32px */
+  }
+  
+  .w-48 {
+    width: 10rem; /* 160px */
+  }
+  
+  .h-48 {
+    height: 10rem; /* 160px */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
