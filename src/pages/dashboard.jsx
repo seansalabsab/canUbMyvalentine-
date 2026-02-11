@@ -114,13 +114,14 @@ export default function App() {
         {/* Photo Display with premium border */}
         <div className="relative inline-block mb-8">
           <div className="absolute inset-0 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full blur-lg opacity-50" />
-            <img
+             <img
               src={`${import.meta.env.BASE_URL}sweetemoji.jpg`}
               alt="Sweet Emoji"
+              className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full shadow-2xl object-cover border-4 border-white"
             />
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-pink-500 via-rose-500 to-red-500 bg-clip-text text-transparent mb-12 leading-tight tracking-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-pink-600 mb-8 sm:mb-12 drop-shadow-lg leading-tight">
           Will you be my Valentine?
         </h1>
 
